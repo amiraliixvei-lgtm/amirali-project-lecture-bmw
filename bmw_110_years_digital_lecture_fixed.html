@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMW: 110 Years of Engineering & Innovation (1916–2026)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            obsidian: '#0B0F17',
+            carbon: '#131A26',
+            steel: '#1E293B',
+            bmwBlue: '#0066B1',
+            mLightBlue: '#009ADA',
+            mRed: '#E2231A',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbar and smooth animations */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0F17;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0066B1;
+    }
+    .m-stripe-gradient {
+      background: linear-gradient(90deg, #009ADA 0%, #009ADA 33.33%, #0066B1 33.33%, #0066B1 66.66%, #E2231A 66.66%, #E2231A 100%);
+    }
+    /* Keep every slide and media element inside the viewport on phones and desktop. */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    #stage, #slide-wrapper, #slide-wrapper article { min-width: 0; max-width: 100%; }
+    #slide-wrapper article { overflow: hidden; }
+    #slide-wrapper img { display: block; max-width: 100%; }
+    #slide-wrapper .slide-photo { width: 100%; aspect-ratio: 16 / 10; max-height: 300px; object-fit: contain; background: #080c13; }
+    #slide-wrapper .gallery-photo { width: 100%; height: clamp(112px, 16vw, 160px); object-fit: contain; background: #080c13; }
+    #slide-wrapper .slide-content-grid > * { min-width: 0; }
+    .slide-enter {
+      animation: slideFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @media (max-width: 640px) {
+      #stage { padding-left: 12px; padding-right: 12px; }
+      #slide-wrapper article { padding: 18px !important; border-radius: 18px; }
+      #slide-wrapper h1 { overflow-wrap: anywhere; }
+    }
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-slate-100 antialiased selection:bg-bmwBlue selection:text-white min-h-screen flex flex-col overflow-x-hidden">
+
+  <!-- Top M-Stripe Accent Bar -->
+  <div class="h-1.5 w-full m-stripe-gradient fixed top-0 left-0 z-50"></div>
+
+  <!-- Header Navigation Bar -->
+  <header class="sticky top-1.5 z-40 bg-obsidian/90 backdrop-blur-md border-b border-slate-800/80 px-4 sm:px-8 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <!-- Stylized BMW Roundel Vector -->
+      <svg class="w-9 h-9 shrink-0" viewBox="0 0 100 100" aria-label="BMW Emblem">
+        <circle cx="50" cy="50" r="48" fill="#0B0F17" stroke="#94A3B8" stroke-width="3"/>
+        <circle cx="50" cy="50" r="32" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+        <path d="M50,50 L50,18 A32,32 0 0,1 82,50 Z" fill="#0066B1"/>
+        <path d="M50,50 L50,82 A32,32 0 0,1 18,50 Z" fill="#0066B1"/>
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#1E293B" stroke-width="2"/>
+        <line x1="50" y1="18" x2="50" y2="82" stroke="#1E293B" stroke-width="2"/>
+        <line x1="18" y1="50" x2="82" y2="50" stroke="#1E293B" stroke-width="2"/>
+      </svg>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="font-display font-bold tracking-wider text-sm sm:text-base text-white">BMW GROUP LECTURE</span>
+          <span class="hidden md:inline-block text-[11px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full bg-bmwBlue/20 text-mLightBlue border border-bmwBlue/40">1916 – 2026</span>
+        </div>
+        <p class="text-xs text-slate-400 hidden sm:block">110 Years of Aeronautical, Two-Wheeled & Automotive Mastery</p>
+      </div>
+    </div>
+
+    <!-- Action Controls -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <button id="btn-toc" class="p-2.5 sm:px-3.5 sm:py-2 rounded-xl bg-carbon hover:bg-steel border border-slate-700/80 text-xs sm:text-sm font-medium text-slate-200 flex items-center gap-2 transition" title="Table of Contents">
+        <i class="fa-solid fa-list-ul text-mLightBlue"></i>
+        <span class="hidden md:inline">Chapters</span>
+      </button>
+
+      <button id="btn-grid" class="p-2.5 sm:px-3.5 sm:py-2 rounded-xl bg-carbon hover:bg-steel border border-slate-700/80 text-xs sm:text-sm font-medium text-slate-200 flex items-center gap-2 transition" title="Grid Overview (G)">
+        <i class="fa-solid fa-grip text-mLightBlue"></i>
+        <span class="hidden md:inline">Grid View</span>
+      </button>
+
+      <button id="btn-notes" class="p-2.5 sm:px-3.5 sm:py-2 rounded-xl bg-carbon hover:bg-steel border border-slate-700/80 text-xs sm:text-sm font-medium text-slate-200 flex items-center gap-2 transition" title="Toggle Speaker Notes (N)">
+        <i class="fa-solid fa-microphone-lines text-mRed"></i>
+        <span class="hidden sm:inline">Speaker Notes</span>
+      </button>
+
+      <button id="btn-fullscreen" class="p-2.5 rounded-xl bg-carbon hover:bg-steel border border-slate-700/80 text-slate-200 transition" title="Toggle Fullscreen (F)">
+        <i class="fa-solid fa-expand"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="w-full h-1 bg-carbon">
+    <div id="progress-bar" class="h-full bg-gradient-to-r from-mLightBlue via-bmwBlue to-mRed transition-all duration-300" style="width: 5.88%;"></div>
+  </div>
+
+  <!-- Main Presentation Stage -->
+  <main id="stage" class="flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-8 py-6 sm:py-10">
+    <!-- Slide Container injected by JS -->
+    <div id="slide-wrapper" class="w-full"></div>
+
+    <!-- Collapsible Speaker Notes Drawer -->
+    <div id="speaker-notes-panel" class="hidden mt-6 rounded-2xl bg-carbon/95 border border-bmwBlue/40 p-5 sm:p-6 shadow-2xl">
+      <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center gap-2 text-mLightBlue font-display font-semibold text-sm uppercase tracking-wider">
+          <i class="fa-solid fa-comment-dots"></i>
+          <span>Academic Presenter Cue / Speaking Script</span>
+        </div>
+        <button id="btn-copy-notes" class="text-xs px-3 py-1.5 rounded-lg bg-steel hover:bg-bmwBlue text-slate-200 transition flex items-center gap-1.5">
+          <i class="fa-regular fa-copy"></i>
+          <span>Copy Script</span>
+        </button>
+      </div>
+      <p id="speaker-notes-text" class="text-slate-200 text-sm sm:text-base leading-relaxed"></p>
+      <div class="mt-4 flex flex-wrap items-center gap-2">
+        <button id="btn-speak-current" class="px-4 py-2 rounded-xl bg-bmwBlue hover:bg-mLightBlue text-white text-sm font-semibold transition">▶ Read Slide Text</button>
+        <button id="btn-speak-all" class="px-4 py-2 rounded-xl bg-steel hover:bg-slate-600 text-white text-sm font-semibold transition">▶▶ Read All Slide Text</button>
+        <button id="btn-speak-current-notes" class="px-4 py-2 rounded-xl bg-carbon hover:bg-steel border border-bmwBlue/50 text-white text-sm font-semibold transition">🎙 Read Speaker Notes</button>
+        <button id="btn-speak-all-notes" class="px-4 py-2 rounded-xl bg-carbon hover:bg-steel border border-bmwBlue/50 text-white text-sm font-semibold transition">🎙 Read All Speaker Notes</button>
+        <button id="btn-speak-pause" class="px-4 py-2 rounded-xl bg-steel hover:bg-slate-600 text-white text-sm font-semibold transition" disabled>Pause</button>
+        <button id="btn-speak-stop" class="px-4 py-2 rounded-xl bg-steel hover:bg-mRed text-white text-sm font-semibold transition" disabled>Stop</button>
+      </div>
+      <p id="speech-status" class="mt-2 text-xs text-slate-400" aria-live="polite">Choose whether to read the visible slide text or the speaker notes.</p>
+    </div>
+  </main>
+
+  <!-- Bottom Navigation Controls -->
+  <footer class="sticky bottom-0 z-30 bg-obsidian/95 backdrop-blur-md border-t border-slate-800/80 px-4 sm:px-8 py-3">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <button id="btn-prev" class="px-4 py-2.5 rounded-xl bg-carbon hover:bg-steel disabled:opacity-40 disabled:pointer-events-none border border-slate-700 text-sm font-semibold text-white flex items-center gap-2 transition">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Previous</span>
+      </button>
+
+      <div class="flex flex-col items-center">
+        <div class="flex items-center gap-2 text-xs sm:text-sm font-display font-semibold text-slate-300">
+          <span>Slide</span>
+          <span id="slide-current" class="text-mLightBlue text-base">1</span>
+          <span class="text-slate-500">/</span>
+          <span id="slide-total">17</span>
+        </div>
+        <span id="slide-category-label" class="text-[11px] text-slate-400 hidden sm:block">Introduction</span>
+      </div>
+
+      <button id="btn-next" class="px-5 py-2.5 rounded-xl bg-bmwBlue hover:bg-mLightBlue disabled:opacity-40 disabled:pointer-events-none text-sm font-semibold text-white flex items-center gap-2 shadow-lg shadow-bmwBlue/25 transition">
+        <span>Next Slide</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Table of Contents Sidebar Drawer -->
+  <div id="toc-drawer" class="fixed inset-0 z-50 hidden">
+    <div id="toc-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <aside class="relative w-80 sm:w-96 max-w-[88vw] h-full bg-carbon border-r border-slate-800 p-6 flex flex-col shadow-2xl">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <h2 class="font-display font-bold text-lg text-white">Lecture Chapters</h2>
+        <button id="btn-close-toc" class="p-2 rounded-lg hover:bg-steel text-slate-400 hover:text-white">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div id="toc-list" class="flex-grow overflow-y-auto py-4 space-y-2 pr-1"></div>
+    </aside>
+  </div>
+
+  <!-- Grid Overview Modal -->
+  <div id="grid-modal" class="fixed inset-0 z-50 hidden bg-obsidian/95 backdrop-blur-md overflow-y-auto p-6 sm:p-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-center justify-between pb-6 border-b border-slate-800 mb-8">
+        <div>
+          <h2 class="font-display font-bold text-2xl text-white">Lecture Overview (All 17 Slides)</h2>
+          <p class="text-sm text-slate-400">Select any slide to jump directly to that section</p>
+        </div>
+        <button id="btn-close-grid" class="px-4 py-2 rounded-xl bg-steel hover:bg-mRed text-white text-sm font-semibold flex items-center gap-2 transition">
+          <i class="fa-solid fa-xmark"></i>
+          <span>Close Grid</span>
+        </button>
+      </div>
+      <div id="grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-2.5 rounded-xl bg-bmwBlue text-white text-sm font-medium shadow-xl">
+    Copied to clipboard!
+  </div>
+
+  <script>
+    // Comprehensive 17-Slide Academic Lecture Dataset
+    const slidesData = [
+      {
+        id: 1,
+        era: "Opening Keynote",
+        badge: "1916 – 2026 • 110 Years",
+        title: "BMW: A Century of Precision Engineering (1916–2026)",
+        subtitle: "The Evolution of Bavarian Mobility, Dominated by Two-Wheeled Mastery",
+        isHero: true,
+        points: [
+          { label: "Aeronautical Foundations", text: "Born in Munich as an aero-engine manufacturer before conquering terrestrial mobility." },
+          { label: "Motorrad Supremacy", text: "Over a century of continuous motorcycle innovation—from the 1923 R 32 Boxer to the 2026 M 1000 RR." },
+          { label: "Automotive Benchmark", text: "Shaped global driving dynamics through the Neue Klasse, M Division, and 800V electrification." }
+        ],
+        specs: [
+          { k: "Founded", v: "March 7, 1916 (Munich)" },
+          { k: "Primary Focus", v: "BMW Motorrad & Automobiles" },
+          { k: "Global Footprint", v: "140+ Countries" }
+        ],
+        visualType: "hero",
+        notes: "Good morning/afternoon everyone. Today, I will guide you through 110 years of Bavarian engineering excellence—tracing BMW's remarkable trajectory from a World War I aircraft engine producer in 1916 to a global titan in 2026, with a primary emphasis on the technological evolution of BMW Motorrad motorcycles."
+      },
+      {
+        id: 2,
+        era: "01 / Aeronautical Genesis",
+        badge: "1916 – 1922",
+        title: "From High-Altitude Aviation to Terrestrial Propulsion",
+        subtitle: "How post-war industrial restrictions forged an engineering powerhouse",
+        points: [
+          { label: "1916–1917 Origins", text: "Emerged from Rapp Motorenwerke and Bayerische Flugzeugwerke (BFW) in Munich, adopting the iconic blue-and-white Bavarian quadrant emblem." },
+          { label: "The BMW IIIa Engine", text: "Designed by Max Friz, this water-cooled inline-six aero engine featured a revolutionary 'high-altitude carburetor,' setting a 9,760-meter altitude record in 1919." },
+          { label: "Treaty of Versailles Pivot", text: "Prohibited from manufacturing aircraft engines after WWI, BMW pivoted to pneumatic railway brakes (Knorr-Bremse) and industrial flat-twin engines." },
+          { label: "1920 M2B15 Boxer", text: "Developed a 494cc opposed twin-cylinder engine originally sold to external motorcycle builders like Victoria before BMW built its own complete machine." }
+        ],
+        specs: [
+          { k: "Key Powerplant", v: "BMW IIIa Inline-6 (185 hp)" },
+          { k: "Altitude Record", v: "9,760 m (32,020 ft) in 1919" },
+          { k: "Chief Engineer", v: "Max Friz" }
+        ],
+        visualType: "aero",
+        notes: "BMW's story begins in the skies, not on the asphalt. Following the Treaty of Versailles in 1919, aircraft production was banned in Germany. Rather than collapsing, chief engineer Max Friz redirected BMW's thermodynamic expertise toward two-wheeled propulsion."
+      },
+      {
+        id: 3,
+        era: "02 / Two-Wheeled Paradigm Shift",
+        badge: "1923 • Paris Motor Show",
+        title: "The Seminal BMW R 32 & The Boxer Blueprint",
+        subtitle: "Establishing a mechanical architecture that endures over a century later",
+        points: [
+          { label: "Transverse Cylinder Orientation", text: "Max Friz rotated the flat-twin Boxer cylinders 90 degrees into the airstream, solving chronic overheating issues on air-cooled engines." },
+          { label: "Enclosed Cardan Shaft Drive", text: "Replaced fragile, greasy drive chains with a fully enclosed, maintenance-free universal driveshaft bolted directly to the gearbox." },
+          { label: "Low Center of Gravity", text: "Placing the opposed cylinders low in a rigid duplex tubular steel frame yielded unmatched stability and agile handling." },
+          { label: "Performance Benchmark", text: "Producing 8.5 horsepower from 494cc, the R 32 effortlessly sustained 95 km/h (59 mph) and won immediate acclaim." }
+        ],
+        specs: [
+          { k: "Displacement", v: "494cc Air-Cooled Boxer" },
+          { k: "Output & Top Speed", v: "8.5 hp • 95 km/h" },
+          { k: "Drivetrain", v: "3-Speed + Cardan Shaft" }
+        ],
+        visualType: "boxerBlueprint",
+        notes: "In September 1923, BMW unveiled its very first motorcycle: the R 32. Notice the three core pillars Max Friz established here—the transverse Boxer engine, the shaft drive, and the low center of gravity. Remarkably, BMW's flagship R 1300 GS still uses this exact fundamental layout today."
+      },
+      {
+        id: 4,
+        era: "03 / Pre-War Speed & Supremacy",
+        badge: "1929 – 1939",
+        title: "Supercharged Records & Isle of Man Glory",
+        subtitle: "Dominating international motorsport through forced induction and aerodynamics",
+        points: [
+          { label: "Ernst Henne's Land Speed Legacy", text: "Between 1929 and 1937, factory rider Ernst Henne shattered 76 world speed records aboard supercharged, streamlined BMW machines." },
+          { label: "1937 World Speed Milestone", text: "Henne reached an astonishing 279.5 km/h (173.68 mph) on a fully faired 500cc BMW Kompressor—a record that stood undefeated for 14 years." },
+          { label: "1935 Hydraulic Telescopic Forks", text: "BMW pioneered the world's first hydraulically damped telescopic front fork on the R 12 and R 17, still the global industry standard." },
+          { label: "1939 Isle of Man Senior TT", text: "Georg 'Schorsch' Meier became the first non-British rider to win the prestigious 500cc Senior TT on a supercharged BMW Type 255 Kompressor." }
+        ],
+        specs: [
+          { k: "1937 Speed Record", v: "279.5 km/h (173.68 mph)" },
+          { k: "1939 TT Winner", v: "Georg Meier (Type 255)" },
+          { k: "Chassis First", v: "Hydraulic Telescopic Fork" }
+        ],
+        visualType: "speedRecord",
+        notes: "During the 1930s, BMW proved that forced induction and aerodynamics could conquer the world. Ernst Henne's 279.5 km/h run in 1937 and Georg Meier's historic 1939 Isle of Man Senior TT victory cemented BMW's global reputation for mechanical superiority."
+      },
+      {
+        id: 5,
+        era: "04 / Post-War Resilience & /5 Era",
+        badge: "1948 – 1973",
+        title: "Reconstruction, Earles Forks & The Iconic R 90 S",
+        subtitle: "Rebuilding from devastation to define the modern sport-touring motorcycle",
+        points: [
+          { label: "1948 BMW R 24 Revival", text: "With Munich factories bombed and plans confiscated, BMW reverse-engineered its own 250cc single-cylinder R 24 to restart civilian production." },
+          { label: "1955 Earles Suspension", text: "Adopted triangulated leading-link Earles forks on the R 50 and R 69, offering extraordinary stability for both solo and sidecar duty." },
+          { label: "1969 Berlin-Spandau /5 Series", text: "Consolidated motorcycle assembly in Berlin with the R 50/5, R 60/5, and R 75/5, introducing electric starters and modern telescopic geometry." },
+          { label: "1973 BMW R 90 S Masterpiece", text: "Styled by Hans Muth with a handlebar cockpit fairing and hand-sprayed Daytona Orange smoke paint, its 898cc Boxer hit 200 km/h and won the 1976 AMA Superbike title." }
+        ],
+        specs: [
+          { k: "R 90 S Engine", v: "898cc OHV Boxer (67 hp)" },
+          { k: "Top Velocity", v: "200 km/h (124 mph)" },
+          { k: "Assembly Hub", v: "Berlin-Spandau (Since 1969)" }
+        ],
+        visualType: "r90s",
+        notes: "After World War II, BMW had to rebuild from scratch. By 1969, production moved to Berlin-Spandau, culminating in 1973 with the legendary BMW R 90 S—a bike that shattered BMW's conservative touring image and won the inaugural AMA Superbike Championship."
+      },
+      {
+        id: 6,
+        era: "05 / Birth of the Adventure Segment",
+        badge: "1980 • Gelände / Straße",
+        title: "BMW R 80 G/S: Inventing Dual-Sport Exploration",
+        subtitle: "Creating the world's most lucrative and versatile motorcycle category",
+        points: [
+          { label: "Gelände / Straße Philosophy", text: "Meaning 'Off-Road / Road,' the 1980 R 80 G/S combined a 797cc Boxer twin with long-travel suspension to excel equally on highways and desert dunes." },
+          { label: "Monolever Single-Sided Swingarm", text: "Introduced the world's first production single-sided rear swingarm, integrating the driveshaft while cutting unsprung weight and easing wheel changes." },
+          { label: "Paris-Dakar Rally Dominance", text: "Claimed four outright victories in the brutal Paris-Dakar Rally (1981, 1983, 1984, 1985) with riders Hubert Auriol and Gaston Rahier." },
+          { label: "Global Market Archetype", text: "Sparked an entire global industry segment; over one million GS Boxer motorcycles have since been delivered worldwide." }
+        ],
+        specs: [
+          { k: "Powertrain", v: "797.5cc Boxer (50 hp)" },
+          { k: "Curb Weight", v: "186 kg (Remarkably Light)" },
+          { k: "Dakar Titles", v: "4x Outright Winner (1981–85)" }
+        ],
+        visualType: "gsDakar",
+        notes: "In 1980, BMW didn't just launch a new motorcycle—it invented a whole new genre. The R 80 G/S proved that a large-displacement twin could conquer the Sahara Desert in the Paris-Dakar Rally and still commute comfortably on European autobahns."
+      },
+      {
+        id: 7,
+        era: "06 / Superbike Disruption",
+        badge: "2009 • S 1000 RR",
+        title: "Shattering the Liter-Class Superbike Hierarchy",
+        subtitle: "BMW's audacious entry into World Superbike racing and extreme track performance",
+        points: [
+          { label: "999cc High-Revving Inline-Four", text: "Departing from Boxer tradition, BMW engineered a compact, oversquare inline-four with titanium valves producing a class-leading 193 hp at 13,000 rpm." },
+          { label: "Electronic Telemetry Revolution", text: "Became the first production superbike equipped with four selectable riding modes, Race ABS, and Dynamic Traction Control (DTC)." },
+          { label: "Asymmetric Split-Headlight Identity", text: "Functional weight-saving headlight design created an unmistakable visual signature that disrupted decades of Japanese dominance." },
+          { label: "ShiftCam Evolution (2019+)", text: "Subsequent generations introduced BMW ShiftCam variable intake valve timing, balancing ferocious top-end power with tractable mid-range torque." }
+        ],
+        specs: [
+          { k: "2009 Output", v: "193 hp / 112 Nm" },
+          { k: "Wet Weight", v: "204 kg (183 kg Dry)" },
+          { k: "Electronics", v: "Race ABS + Dynamic Traction" }
+        ],
+        visualType: "s1000rr",
+        notes: "For decades, Japanese manufacturers ruled the 1000cc superbike class. In 2009, BMW stunned the racing world with the S 1000 RR—bringing Formula 1-level electronics, 193 horsepower, and an iconic asymmetric headlight design."
+      },
+      {
+        id: 8,
+        era: "07 / Track-Bred Pinnacle",
+        badge: "2021 – 2026 • BMW M 1000 RR",
+        title: "The First M-Badged Motorcycle & WorldSBK Glory",
+        subtitle: "Pure homologation aerodynamics, titanium internals, and championship supremacy",
+        points: [
+          { label: "Inaugural BMW M Motorcycle", text: "Launched as the first two-wheeled machine bearing the coveted BMW M badge, engineered specifically for World Superbike homologation." },
+          { label: "Carbon Fiber Aero Winglets", text: "Exposed M Carbon winglets generate up to 22.6 kg of aerodynamic downforce at 300 km/h, suppressing wheelies and sharpening braking stability." },
+          { label: "Pankl Titanium Internals", text: "Features forged 2-ring pistons, Pankl titanium connecting rods, a full Akrapovič titanium exhaust, and a 15,100 rpm redline (212–218 hp)." },
+          { label: "WorldSBK Championship Triumph", text: "Toprak Razgatlıoğlu piloted the M 1000 RR to consecutive FIM Superbike World Championships (2024–2025), cementing BMW's racing crown." }
+        ],
+        specs: [
+          { k: "Peak Output", v: "212 – 218 hp @ 14,500 rpm" },
+          { k: "Aero Downforce", v: "22.6 kg @ 300 km/h" },
+          { k: "Top Speed", v: "314 km/h (195 mph)" }
+        ],
+        visualType: "m1000rr",
+        notes: "Taking the S 1000 RR to the absolute limit, BMW introduced its first-ever M motorcycle: the M 1000 RR. With carbon fiber aerodynamic winglets, Pankl titanium rods, and 218 horsepower, it delivered BMW's historic World Superbike title."
+      },
+      {
+        id: 9,
+        era: "08 / Modern GS Flagship",
+        badge: "2023 – 2026 • R 1300 GS",
+        title: "BMW R 1300 GS: Peak Boxer Mastery & ASA Tech",
+        subtitle: "A ground-up re-engineering of the world's premier adventure motorcycle",
+        points: [
+          { label: "1,300cc ShiftCam Powerhouse", text: "Produces 145 hp and 149 Nm of torque—the most powerful production BMW Boxer engine ever built—while shedding 12 kg of overall vehicle mass." },
+          { label: "Under-Engine Gearbox & Sheet-Metal Frame", text: "Relocating the 6-speed transmission beneath the crankshaft compacted engine packaging and lowered rotational inertia." },
+          { label: "EVO Telelever & Paralever", text: "Next-generation chassis kinematics paired with Adaptive Vehicle Height Control, automatically lowering the seat at stops." },
+          { label: "Radar Safety & Automated Shift (ASA)", text: "Integrates Active Cruise Control, Front Collision Warning, and Automated Shift Assistant (ASA) for clutchless manual or fully automated shifting." }
+        ],
+        specs: [
+          { k: "Engine Output", v: "145 hp / 149 Nm Torque" },
+          { k: "Weight Reduction", v: "-12 kg vs. R 1250 GS" },
+          { k: "Smart Tech", v: "Radar ACC + ASA Clutchless" }
+        ],
+        visualType: "r1300gs",
+        notes: "From 2023 into 2026, the R 1300 GS represents the pinnacle of the Boxer lineage. By placing the gearbox underneath the engine, BMW shaved 12 kilograms off the bike while boosting output to 145 horsepower and adding radar-assisted safety."
+      },
+      {
+        id: 10,
+        era: "09 / Transcontinental & Heritage",
+        badge: "Six-Cylinder & Big Boxer",
+        title: "K 1600 GTL Luxury & The 1,802cc R 18 Cruiser",
+        subtitle: "Demonstrating powertrain breadth from turbine-smooth sixes to heritage torque",
+        points: [
+          { label: "BMW K 1600 GTL Inline-Six", text: "A 1,649cc transverse straight-six weighing just 102.6 kg, delivering 160 hp and 180 Nm with near-zero vibration for transcontinental touring." },
+          { label: "BMW R 18 'Big Boxer'", text: "At 1,802cc, it is the highest-displacement Boxer engine BMW has ever constructed, producing 158 Nm of torque at just 3,000 rpm." },
+          { label: "Exposed Heritage Craftsmanship", text: "The R 18 pays homage to the 1936 R 5 with a double-loop steel tube frame, teardrop fuel tank, and open, nickel-plated driveshaft." },
+          { label: "Adaptive Cornering Illumination", text: "Both platforms showcase BMW's luxury leadership with adaptive swivel headlights, reverse assist, and Dynamic ESA electronic suspension." }
+        ],
+        specs: [
+          { k: "K 1600 Inline-6", v: "1,649cc • 160 hp / 180 Nm" },
+          { k: "R 18 Big Boxer", v: "1,802cc • 91 hp / 158 Nm" },
+          { k: "Design Ethos", v: "Luxury Touring & Heritage" }
+        ],
+        visualType: "k1600r18",
+        notes: "Beyond sportbikes and adventure tourers, BMW showcases extraordinary mechanical diversity—spanning the turbine-smooth 6-cylinder K 1600 GTL and the monumental 1,802cc air/oil-cooled 'Big Boxer' inside the R 18 cruiser."
+      },
+      {
+        id: 11,
+        era: "10 / Two-Wheel Safety & Chassis",
+        badge: "Engineering Firsts",
+        title: "BMW Motorrad Safety & Kinematic Innovations",
+        subtitle: "Pioneering active rider protection decades before industry mandates",
+        points: [
+          { label: "1988 Anti-Lock Braking (ABS)", text: "Introduced on the K100, making BMW the world's first motorcycle manufacturer to offer production ABS." },
+          { label: "ABS Pro & 6-Axis IMU", text: "Lean-angle-sensitive cornering ABS prevents wheel lockup and sudden upright pitching during emergency mid-corner braking." },
+          { label: "Telelever, Duolever & Paralever", text: "Proprietary front and rear suspension geometries decouple braking dive and shaft-drive torque reactions for unmatched chassis poise." },
+          { label: "ConnectedRide Smartglasses & eCall", text: "Augmented-reality visor HUD projects speed, gear, and navigation directly into the rider's field of view alongside automated emergency dispatch." }
+        ],
+        specs: [
+          { k: "1988 Milestone", v: "World's 1st Motorcycle ABS" },
+          { k: "Chassis Kinematics", v: "Telelever / Duolever / Paralever" },
+          { k: "Digital Vision", v: "ConnectedRide AR HUD" }
+        ],
+        visualType: "safetyTech",
+        notes: "Safety is deeply embedded in BMW Motorrad's DNA. BMW was the first brand to bring ABS to motorcycles in 1988, and today leads the industry with cornering ABS Pro, anti-dive Telelever suspension, and augmented-reality smartglasses."
+      },
+      {
+        id: 12,
+        era: "11 / Urban Electromobility",
+        badge: "Zero-Emission Two-Wheelers",
+        title: "BMW CE 04, CE 02 & Vision DC Roadster",
+        subtitle: "Reimagining urban two-wheeled architecture for the electric age",
+        points: [
+          { label: "BMW CE 04 Architectural Design", text: "Built around a flat underfloor 8.9 kWh lithium-ion battery pack derived from BMW i automotive cells, enabling an elongated, futuristic silhouette." },
+          { label: "Rapid Urban Performance", text: "Delivers 42 hp (31 kW), accelerating 0–50 km/h in 2.6 seconds with a 130 km range and integrated ventilated helmet storage." },
+          { label: "BMW CE 02 eParkourer", text: "Lightweight, agile electric mobility tailored for Gen-Z urban commuters, blending skateboard aesthetics with motorcycle dynamics." },
+          { label: "Vision DC Roadster Concept", text: "Demonstrates how BMW's iconic Boxer silhouette evolves into the electric era—replacing cylinders with cooling ribs and lateral battery modules." }
+        ],
+        specs: [
+          { k: "CE 04 Output", v: "31 kW (42 hp) • 0–50 in 2.6s" },
+          { k: "Range & Charging", v: "130 km • 20–80% in 45 min" },
+          { k: "Market Share", v: "#1 Global Premium Electric 2W" }
+        ],
+        visualType: "electricMoto",
+        notes: "Transitioning to our electric future, BMW Motorrad dominates the premium electric two-wheeler market with the futuristic CE 04 and CE 02, while previews like the Vision DC Roadster show how the Boxer identity translates to battery power."
+      },
+      {
+        id: 13,
+        era: "12 / Four-Wheeled Expansion",
+        badge: "1928 – 1975",
+        title: "From the 1928 Dixi to the Legendary BMW 2002",
+        subtitle: "How the 'Neue Klasse' rescued BMW and invented the modern sports sedan",
+        points: [
+          { label: "1928 Dixi 3/15 & 1936 BMW 328", text: "BMW entered automobile manufacturing in Eisenach with the Dixi, soon crafting the lightweight, tubular-frame 328 roadster that won the 1940 Mille Miglia." },
+          { label: "1962 'Neue Klasse' (BMW 1500)", text: "Facing near-bankruptcy in 1959, BMW launched the Neue Klasse sedan—defining the brand's DNA with the kidney grille, Hofmeister kink, and nimble handling." },
+          { label: "1968–1975 BMW 2002 Series", text: "Condensed Neue Klasse agility into a compact two-door coupe, culminating in the 1973 BMW 2002 Turbo—Europe's first turbocharged production car." },
+          { label: "Driver-Centric Cockpit", text: "Introduced the angled center console oriented toward the driver, establishing BMW's 'Sheer Driving Pleasure' philosophy." }
+        ],
+        specs: [
+          { k: "Auto Debut", v: "1928 (Eisenach Plant)" },
+          { k: "Company Savior", v: "1962 Neue Klasse 1500" },
+          { k: "1973 Milestone", v: "2002 Turbo (170 hp)" }
+        ],
+        visualType: "carHeritage",
+        notes: "Now let's examine BMW's four-wheeled evolution. After starting car production in 1928, BMW nearly went bankrupt in 1959—only to be saved by the 1962 Neue Klasse and the iconic BMW 2002, which effectively invented the compact sports sedan."
+      },
+      {
+        id: 14,
+        era: "13 / Motorsport Pedigree",
+        badge: "1972 – 1986 • BMW M",
+        title: "BMW M GmbH & The Touring Car Legend E30 M3",
+        subtitle: "Translating racetrack engineering directly onto public roads",
+        points: [
+          { label: "1972 BMW Motorsport GmbH", text: "Founded under Jochen Neerpasch with the iconic tri-color stripes, debuting with the lightweight 'Batmobile' 3.0 CSL coupe." },
+          { label: "1978 BMW M1 Supercar", text: "Styled by Giorgetto Giugiaro with a mid-mounted 277 hp M88 straight-six, becoming BMW's sole mid-engine supercar." },
+          { label: "1986 BMW E30 M3", text: "Built as a Group A racing homologation special with flared box arches and a high-revving S14 four-cylinder, becoming the winningest touring car in history." },
+          { label: "Core 3, 5 & 7 Series Pillars", text: "Established the global benchmarks across executive segments, powered by BMW's signature naturally aspirated and twin-turbo inline-sixes." }
+        ],
+        specs: [
+          { k: "M Division Born", v: "May 1972 (Jochen Neerpasch)" },
+          { k: "1978 M1 Engine", v: "3.5L M88 Inline-6 (277 hp)" },
+          { k: "E30 M3 Legacy", v: "1,500+ Touring Car Victories" }
+        ],
+        visualType: "mDivision",
+        notes: "In 1972, BMW established its Motorsport division—BMW M. From the mid-engine M1 supercar to the 1986 E30 M3 homologation special, BMW M turned racetrack dominance into the gold standard for road-going performance."
+      },
+      {
+        id: 15,
+        era: "14 / Performance Sedans & xDrive",
+        badge: "1984 – 2026 • M5 & X-Series",
+        title: "Executive Super-Sedans & The SAV Revolution",
+        subtitle: "Mastering 50:50 weight distribution and intelligent all-wheel drive",
+        points: [
+          { label: "BMW M5 Lineage (E28 to G90)", text: "Invented the stealth super-sedan in 1984 by fitting an M1 engine into a 5 Series; today's G90 M5 pairs a V8 with M Hybrid power for 727 hp." },
+          { label: "50:50 Axle Load Equilibrium", text: "Near-ideal front-to-rear mass balance remains a core engineering mandate across BMW's rear-biased CLAR architecture." },
+          { label: "1999 BMW X5: Birth of the SAV", text: "Rejected truck-like SUV conventions by engineering a unibody 'Sports Activity Vehicle' with car-like cornering precision." },
+          { label: "Intelligent xDrive AWD", text: "Variable torque distribution dynamically shifts power between axles in milliseconds, anchoring the global X1 through X7 lineup." }
+        ],
+        specs: [
+          { k: "Chassis Balance", v: "50:50 Weight Distribution" },
+          { k: "Modern M5 Hybrid", v: "727 hp / 1,000 Nm Torque" },
+          { k: "X-Series Impact", v: "45%+ of Global BMW Sales" }
+        ],
+        visualType: "m5xDrive",
+        notes: "BMW revolutionized family and executive transport twice: first in 1984 with the M5 super-sedan, and again in 1999 with the X5, which proved that an all-wheel-drive utility vehicle could handle like a sports sedan."
+      },
+      {
+        id: 16,
+        era: "15 / The Electric Neue Klasse Era",
+        badge: "2025 – 2026 • Gen6 Tech",
+        title: "The Second Neue Klasse: 800V & Digital Reinvention",
+        subtitle: "BMW's biggest technological transformation since the 1960s",
+        points: [
+          { label: "2013–2014 Carbon Pioneers (i3 & i8)", text: "Early innovators utilizing Carbon Fiber Reinforced Polymer (CFRP) passenger cells long before mainstream EV adoption." },
+          { label: "2025–2026 Neue Klasse Architecture", text: "Dedicated 800-volt electric platform featuring Gen6 cylindrical battery cells—delivering 30% faster charging and 30% greater range." },
+          { label: "BMW Panoramic Vision HUD", text: "Replaces traditional instrument clusters with a pillar-to-pillar lower windshield projection controlled by four 'Superbrain' computers." },
+          { label: "Circular Economy & Sustainability", text: "Manufactured in carbon-neutral plants (such as Debrecen, Hungary) with mono-material interiors designed for 100% recyclability." }
+        ],
+        specs: [
+          { k: "Voltage & Cells", v: "800V • Gen6 Cylindrical" },
+          { k: "Charging Gain", v: "+300 km in 10 Minutes" },
+          { k: "Computing Core", v: "4x High-Speed Superbrains" }
+        ],
+        visualType: "neueKlasse",
+        notes: "Here in 2025 and 2026, BMW is executing its boldest leap yet: the all-electric Neue Klasse. Featuring 800-volt cylindrical batteries, full-windshield Panoramic Vision displays, and circular manufacturing, it redefines the next century of mobility."
+      },
+      {
+        id: 17,
+        era: "16 / Global Legacy & Conclusion",
+        badge: "2026 Corporate Scale",
+        title: "110 Years of Engineering Excellence: By The Numbers",
+        subtitle: "Uniting 'Make Life a Ride' and 'Sheer Driving Pleasure' for the future",
+        points: [
+          { label: "Record BMW Motorrad Volume", text: "Over 210,000 motorcycles delivered annually worldwide, led by the R 1300 GS, S/M 1000 RR, and CE electric urban lineup." },
+          { label: "Global Automotive Leadership", text: "More than 2.5 million BMW, MINI, and Rolls-Royce vehicles delivered across 140+ countries every year." },
+          { label: "Technological Openness", text: "Simultaneous mastery of high-efficiency combustion, plug-in hybrids, battery-electric vehicles, and hydrogen fuel cells (iX5 Hydrogen)." },
+          { label: "Enduring Philosophy", text: "From a 1916 Munich aero-engine workshop to 2026 autonomous digital mobility, precision engineering remains BMW's timeless signature." }
+        ],
+        specs: [
+          { k: "Heritage Span", v: "110 Years (1916 – 2026)" },
+          { k: "Annual Motorrad", v: "210,000+ Motorcycles" },
+          { k: "Annual Group Cars", v: "2.5+ Million Vehicles" }
+        ],
+        visualType: "metrics",
+        notes: "To conclude: over 110 years, BMW has transformed from a small Munich aircraft engine maker into a global mobility powerhouse delivering over 210,000 motorcycles and 2.5 million cars annually. Thank you for your attention—I welcome your questions."
+      }
+    ];
+
+    // Verified Wikimedia Commons photographs for key models mentioned in the lecture.
+    // Wikimedia file pages provide the original creator and license information.
+    const slidePhotoMap = {
+      3: { file: "1923 BMW R32 (1) - The Art of the Motorcycle - Memphis.jpg", caption: "BMW R 32 (1923)" },
+      5: { file: "BMW R90S.jpg", caption: "BMW R 90 S" },
+      6: { file: "1981 BMW R80 GS side.jpg", caption: "BMW R 80 G/S" },
+      7: { file: "BMW S1000RR.jpg", caption: "BMW S 1000 RR" },
+      9: { file: "2022-05 BMW M Motorrad S1000RR.jpg", caption: "BMW M 1000 RR (M model)" },
+      10: { file: "BMW R1300GS Adventure 2025.jpg", caption: "BMW R 1300 GS Adventure" },
+      12: { file: "BMW CE04 Avantgarde.png", caption: "BMW CE 04 electric scooter" },
+      13: { file: "1974 BMW 2002 Turbo.jpg", caption: "BMW 2002 Turbo" },
+      14: { file: "BMW M1 071 (3418979140).jpg", caption: "BMW M1" },
+      15: { file: "BMW M5 295 (3420870402).jpg", caption: "BMW M5" },
+      16: { file: "BMW-i8.JPG", caption: "BMW i8" }
+    };
+    const commonsPhoto = (file) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=1400`;
+
+    // Custom Architectural & Technical Vector Visuals for Each Slide
+    function renderSlideVisual(type) {
+      switch (type) {
+        case "hero":
+          return `
+            <div class="relative w-full h-full min-h-[340px] rounded-2xl bg-gradient-to-br from-carbon via-slate-900 to-obsidian border border-slate-800 p-6 sm:p-8 flex flex-col justify-between overflow-hidden">
+              <div class="absolute -right-16 -top-16 w-72 h-72 rounded-full bg-bmwBlue/15 blur-3xl"></div>
+              <div class="absolute -left-16 -bottom-16 w-72 h-72 rounded-full bg-mRed/15 blur-3xl"></div>
+              <div class="flex items-center justify-between z-10">
+                <span class="text-xs font-mono uppercase tracking-widest text-mLightBlue">Munich • Berlin • Dingolfing</span>
+                <div class="flex gap-1.5">
+                  <span class="w-3 h-3 rounded-full bg-mLightBlue"></span>
+                  <span class="w-3 h-3 rounded-full bg-bmwBlue"></span>
+                  <span class="w-3 h-3 rounded-full bg-mRed"></span>
+                </div>
+              </div>
+              <!-- Stylized Boxer & Motorsport Telemetry Graphic -->
+              <svg viewBox="0 0 420 210" class="w-full h-auto my-4 z-10">
+                <defs>
+                  <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#009ADA"/>
+                    <stop offset="50%" stop-color="#0066B1"/>
+                    <stop offset="100%" stop-color="#E2231A"/>
+                  </linearGradient>
+                </defs>
+                <!-- Grid Lines -->
+                <line x1="20" y1="175" x2="400" y2="175" stroke="#1E293B" stroke-width="2"/>
+                <line x1="20" y1="135" x2="400" y2="135" stroke="#1E293B" stroke-dasharray="4 4"/>
+                <line x1="20" y1="95" x2="400" y2="95" stroke="#1E293B" stroke-dasharray="4 4"/>
+                <!-- Dynamic Motorcycle & Car Silhouette Curves -->
+                <path d="M 35 160 Q 110 70, 210 95 T 385 45" fill="none" stroke="url(#blueGlow)" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="35" cy="160" r="6" fill="#009ADA"/>
+                <circle cx="150" cy="95" r="6" fill="#0066B1"/>
+                <circle cx="275" cy="78" r="6" fill="#009ADA"/>
+                <circle cx="385" cy="45" r="8" fill="#E2231A"/>
+                <!-- Labels -->
+                <text x="35" y="195" fill="#94A3B8" font-size="11" font-family="monospace">1916 AERO</text>
+                <text x="128" y="195" fill="#94A3B8" font-size="11" font-family="monospace">1923 R 32</text>
+                <text x="245" y="195" fill="#94A3B8" font-size="11" font-family="monospace">1980 R 80 G/S</text>
+                <text x="342" y="195" fill="#F8FAFC" font-size="11" font-weight="bold" font-family="monospace">2026 M / EV</text>
+              </svg>
+              <div class="grid grid-cols-3 gap-3 z-10 pt-2 border-t border-slate-800/80">
+                <div class="bg-obsidian/70 rounded-xl p-3 border border-slate-800">
+                  <p class="text-xs text-slate-400">1916</p>
+                  <p class="font-display font-bold text-white text-sm">BMW IIIa Aero</p>
+                </div>
+                <div class="bg-obsidian/70 rounded-xl p-3 border border-slate-800">
+                  <p class="text-xs text-slate-400">1923–2026</p>
+                  <p class="font-display font-bold text-mLightBlue text-sm">Motorrad DNA</p>
+                </div>
+                <div class="bg-obsidian/70 rounded-xl p-3 border border-slate-800">
+                  <p class="text-xs text-slate-400">2026</p>
+                  <p class="font-display font-bold text-mRed text-sm">Neue Klasse</p>
+                </div>
+              </div>
+            </div>`;
+
+        case "aero":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-mono text-mLightBlue uppercase">Aeronautical Blueprint • 1917</span>
+                <i class="fa-solid fa-plane-up text-bmwBlue"></i>
+              </div>
+              <svg viewBox="0 0 400 220" class="w-full h-auto my-2">
+                <!-- Stylized Propeller & Inline-6 Schematic -->
+                <circle cx="200" cy="110" r="85" fill="none" stroke="#1E293B" stroke-width="2" stroke-dasharray="6 4"/>
+                <circle cx="200" cy="110" r="55" fill="#0B0F17" stroke="#0066B1" stroke-width="2.5"/>
+                <!-- Propeller Blades -->
+                <path d="M200 15 C214 55, 214 85, 200 110 C186 85, 186 55, 200 15 Z" fill="#009ADA" opacity="0.85"/>
+                <path d="M200 205 C214 165, 214 135, 200 110 C186 135, 186 165, 200 205 Z" fill="#009ADA" opacity="0.85"/>
+                <!-- Bavaria Quadrant Core -->
+                <circle cx="200" cy="110" r="24" fill="#FFFFFF"/>
+                <path d="M200,110 L200,86 A24,24 0 0,1 224,110 Z" fill="#0066B1"/>
+                <path d="M200,110 L200,134 A24,24 0 0,1 176,110 Z" fill="#0066B1"/>
+                <!-- Altitude Marker -->
+                <rect x="20" y="22" width="115" height="36" rx="8" fill="#0B0F17" stroke="#334155"/>
+                <text x="32" y="38" fill="#94A3B8" font-size="9" font-family="monospace">ALTITUDE RECORD</text>
+                <text x="32" y="51" fill="#F8FAFC" font-size="12" font-weight="bold" font-family="monospace">9,760 METERS</text>
+                <rect x="265" y="162" width="115" height="36" rx="8" fill="#0B0F17" stroke="#334155"/>
+                <text x="277" y="178" fill="#94A3B8" font-size="9" font-family="monospace">FIRST BOXER</text>
+                <text x="277" y="191" fill="#009ADA" font-size="12" font-weight="bold" font-family="monospace">1920 M2B15</text>
+              </svg>
+              <div class="bg-obsidian/80 rounded-xl p-4 border border-slate-800/90 text-xs text-slate-300 leading-relaxed">
+                <strong class="text-white">Historical Note:</strong> The blue-and-white BMW roundel reflects the heraldic colors of the Free State of Bavaria, arranged in the circular layout of the former Rapp Motorenwerke logo.
+              </div>
+            </div>`;
+
+        case "boxerBlueprint":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-mLightBlue uppercase">1923 R 32 Transverse Boxer Schematic</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-bmwBlue/20 text-mLightBlue font-mono">494cc</span>
+              </div>
+              <svg viewBox="0 0 400 220" class="w-full h-auto my-2">
+                <!-- Airflow Arrows -->
+                <path d="M40 55 L110 55" stroke="#009ADA" stroke-width="2" marker-end="url(#arrow)"/>
+                <path d="M290 55 L360 55" stroke="#009ADA" stroke-width="2"/>
+                <text x="42" y="45" fill="#009ADA" font-size="10" font-family="monospace">COOLING AIRSTREAM →</text>
+                <text x="255" y="45" fill="#009ADA" font-size="10" font-family="monospace">COOLING AIRSTREAM →</text>
+                <!-- Crankcase Core -->
+                <rect x="165" y="75" width="70" height="70" rx="12" fill="#1E293B" stroke="#64748B" stroke-width="2"/>
+                <circle cx="200" cy="110" r="18" fill="#0B0F17" stroke="#009ADA" stroke-width="2"/>
+                <!-- Left Cylinder (Opposed) -->
+                <rect x="85" y="88" width="80" height="44" rx="6" fill="#0B0F17" stroke="#0066B1" stroke-width="2.5"/>
+                <line x1="100" y1="88" x2="100" y2="132" stroke="#0066B1" stroke-width="2"/>
+                <line x1="115" y1="88" x2="115" y2="132" stroke="#0066B1" stroke-width="2"/>
+                <line x1="130" y1="88" x2="130" y2="132" stroke="#0066B1" stroke-width="2"/>
+                <line x1="145" y1="88" x2="145" y2="132" stroke="#0066B1" stroke-width="2"/>
+                <!-- Right Cylinder (Opposed) -->
+                <rect x="235" y="88" width="80" height="44" rx="6" fill="#0B0F17" stroke="#0066B1" stroke-width="2.5"/>
+                <line x1="255" y1="88" x2="255" y2="132" stroke="#0066B1" stroke-width="2"/>
+                <line x1="270" y1="88" x2="270" y2="132" stroke="#0066B1" stroke-width="2"/>
+                <line x1="285" y1="88" x2="285" y2="132" stroke="#0066B1" stroke-width="2"/>
+                <line x1="300" y1="88" x2="300" y2="132" stroke="#0066B1" stroke-width="2"/>
+                <!-- Cardan Shaft Drive -->
+                <rect x="192" y="145" width="16" height="55" rx="4" fill="#E2231A"/>
+                <text x="218" y="178" fill="#F8FAFC" font-size="11" font-weight="bold" font-family="monospace">CARDAN SHAFT DRIVE</text>
+              </svg>
+              <div class="grid grid-cols-2 gap-3 text-xs">
+                <div class="p-3 rounded-xl bg-obsidian border border-slate-800">
+                  <span class="text-slate-400 block">Thermal Advantage</span>
+                  <span class="text-white font-semibold">Equal cylinder air-cooling</span>
+                </div>
+                <div class="p-3 rounded-xl bg-obsidian border border-slate-800">
+                  <span class="text-slate-400 block">Maintenance</span>
+                  <span class="text-mLightBlue font-semibold">Zero chain adjustment</span>
+                </div>
+              </div>
+            </div>`;
+
+        case "speedRecord":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-mRed uppercase">World Land Speed Record • 1937</span>
+                <i class="fa-solid fa-gauge-high text-mRed"></i>
+              </div>
+              <div class="my-4 p-6 rounded-2xl bg-gradient-to-r from-obsidian to-slate-900 border border-slate-800 text-center">
+                <p class="text-xs uppercase tracking-widest text-slate-400 mb-1">BMW 500 Kompressor Streamliner</p>
+                <div class="font-display font-extrabold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-mLightBlue via-white to-mRed">
+                  279.5 <span class="text-2xl">km/h</span>
+                </div>
+                <p class="text-sm text-slate-300 mt-2">173.68 mph • Piloted by Ernst Henne (Autobahn Frankfurt–Darmstadt)</p>
+              </div>
+              <div class="space-y-2.5 text-xs">
+                <div class="flex justify-between p-3 rounded-xl bg-obsidian border border-slate-800">
+                  <span class="text-slate-400">Record Longevity</span>
+                  <span class="text-white font-semibold">14 Consecutive Years (1937–1951)</span>
+                </div>
+                <div class="flex justify-between p-3 rounded-xl bg-obsidian border border-slate-800">
+                  <span class="text-slate-400">1939 Isle of Man Senior TT</span>
+                  <span class="text-mLightBlue font-semibold">1st Non-British Victory (Georg Meier)</span>
+                </div>
+              </div>
+            </div>`;
+
+        case "r90s":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-amber-400 uppercase">1973 BMW R 90 S • Daytona Orange</span>
+                <span class="text-xs font-mono text-slate-400">Design: Hans Muth</span>
+              </div>
+              <!-- Stylized R90S Daytona Orange Gradient Card -->
+              <div class="my-4 rounded-2xl p-6 bg-gradient-to-br from-amber-500/20 via-orange-600/20 to-obsidian border border-amber-500/30 flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-4">
+                  <div>
+                    <h4 class="font-display font-bold text-2xl text-white">R 90 S Superbike</h4>
+                    <p class="text-xs text-amber-300">First Production Cockpit Fairing</p>
+                  </div>
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-orange-600 to-amber-300 border-2 border-white/40 shadow-lg"></div>
+                </div>
+                <div class="grid grid-cols-3 gap-2 text-center pt-3 border-t border-amber-500/20">
+                  <div>
+                    <p class="text-[11px] text-slate-400">Displacement</p>
+                    <p class="font-display font-bold text-white">898 cc</p>
+                  </div>
+                  <div>
+                    <p class="text-[11px] text-slate-400">Carburetors</p>
+                    <p class="font-display font-bold text-white">Dell'Orto 38mm</p>
+                  </div>
+                  <div>
+                    <p class="text-[11px] text-slate-400">1976 AMA Title</p>
+                    <p class="font-display font-bold text-amber-400">1st Place</p>
+                  </div>
+                </div>
+              </div>
+              <p class="text-xs text-slate-400">
+                Followed in <strong class="text-white">1976 by the R 100 RS</strong>—the world's first mass-produced motorcycle with a full wind-tunnel-engineered fairing.
+              </p>
+            </div>`;
+
+        case "gsDakar":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-mLightBlue uppercase">1980 R 80 G/S • Rally Pedigree</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-mRed/20 text-mRed font-semibold">4x Paris-Dakar</span>
+              </div>
+              <div class="my-4 space-y-3">
+                <div class="p-4 rounded-xl bg-obsidian border border-slate-800">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="font-display font-bold text-white">Monolever Rear Suspension</span>
+                    <span class="text-xs font-mono text-mLightBlue">World First</span>
+                  </div>
+                  <p class="text-xs text-slate-400">Single-sided aluminum swingarm housing the driveshaft, saving 2 kg and allowing rear wheel removal in under 60 seconds.</p>
+                </div>
+                <div class="grid grid-cols-4 gap-2 text-center">
+                  <div class="p-3 rounded-xl bg-bmwBlue/15 border border-bmwBlue/30">
+                    <p class="font-display font-bold text-white text-sm">1981</p>
+                    <p class="text-[10px] text-mLightBlue">H. Auriol</p>
+                  </div>
+                  <div class="p-3 rounded-xl bg-bmwBlue/15 border border-bmwBlue/30">
+                    <p class="font-display font-bold text-white text-sm">1983</p>
+                    <p class="text-[10px] text-mLightBlue">H. Auriol</p>
+                  </div>
+                  <div class="p-3 rounded-xl bg-mRed/15 border border-mRed/30">
+                    <p class="font-display font-bold text-white text-sm">1984</p>
+                    <p class="text-[10px] text-mRed">G. Rahier</p>
+                  </div>
+                  <div class="p-3 rounded-xl bg-mRed/15 border border-mRed/30">
+                    <p class="font-display font-bold text-white text-sm">1985</p>
+                    <p class="text-[10px] text-mRed">G. Rahier</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 rounded-xl bg-obsidian/90 border border-slate-800 text-xs text-slate-300">
+                <strong class="text-white">Legacy Impact:</strong> Over <span class="text-mLightBlue font-bold">1,000,000+</span> Boxer GS motorcycles sold globally since 1980.
+              </div>
+            </div>`;
+
+        case "s1000rr":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-mLightBlue uppercase">2009 BMW S 1000 RR Telemetry</span>
+                <span class="text-xs font-mono text-mRed">14,200 RPM</span>
+              </div>
+              <div class="my-4 space-y-3">
+                <div>
+                  <div class="flex justify-between text-xs mb-1">
+                    <span class="text-slate-300">Power-to-Weight Ratio</span>
+                    <span class="text-white font-bold">193 hp / 204 kg wet</span>
+                  </div>
+                  <div class="w-full h-2.5 bg-obsidian rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-mLightBlue to-bmwBlue w-[94%]"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs mb-1">
+                    <span class="text-slate-300">Electronic Rider Aids (Race ABS + DTC)</span>
+                    <span class="text-mLightBlue font-bold">Benchmark Setting</span>
+                  </div>
+                  <div class="w-full h-2.5 bg-obsidian rounded-full overflow-hidden">
+                    <div class="h-full bg-mLightBlue w-[98%]"></div>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3 pt-2">
+                  <div class="p-3.5 rounded-xl bg-obsidian border border-slate-800">
+                    <p class="text-[11px] text-slate-400">Valvetrain</p>
+                    <p class="font-display font-bold text-white text-sm">Titanium + ShiftCam</p>
+                  </div>
+                  <div class="p-3.5 rounded-xl bg-obsidian border border-slate-800">
+                    <p class="text-[11px] text-slate-400">Riding Modes</p>
+                    <p class="font-display font-bold text-mRed text-sm">Rain / Sport / Race / Slick</p>
+                  </div>
+                </div>
+              </div>
+              <p class="text-xs text-slate-400">
+                Engineered with an 80 mm bore and 49.7 mm ultra-short stroke for explosive high-rpm acceleration.
+              </p>
+            </div>`;
+
+        case "m1000rr":
+          return `
+            <div class="rounded-2xl bg-gradient-to-br from-carbon via-slate-900 to-obsidian border border-mRed/40 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 text-xs font-extrabold italic bg-mRed text-white rounded">///M</span>
+                  <span class="font-display font-bold text-white text-sm">M 1000 RR (2021–2026)</span>
+                </div>
+                <span class="text-xs font-mono text-mLightBlue">WorldSBK Champion</span>
+              </div>
+              <div class="my-4 grid grid-cols-2 gap-3">
+                <div class="p-4 rounded-xl bg-obsidian/90 border border-slate-800">
+                  <p class="text-xs text-slate-400">Horsepower</p>
+                  <p class="font-display font-bold text-2xl text-white">218 <span class="text-xs text-mRed">hp</span></p>
+                  <p class="text-[11px] text-slate-400 mt-1">15,100 rpm ceiling</p>
+                </div>
+                <div class="p-4 rounded-xl bg-obsidian/90 border border-slate-800">
+                  <p class="text-xs text-slate-400">Carbon Downforce</p>
+                  <p class="font-display font-bold text-2xl text-mLightBlue">22.6 <span class="text-xs text-white">kg</span></p>
+                  <p class="text-[11px] text-slate-400 mt-1">At 300 km/h</p>
+                </div>
+                <div class="p-4 rounded-xl bg-obsidian/90 border border-slate-800">
+                  <p class="text-xs text-slate-400">Curb Weight</p>
+                  <p class="font-display font-bold text-2xl text-white">192 <span class="text-xs text-slate-400">kg</span></p>
+                  <p class="text-[11px] text-slate-400 mt-1">M Carbon wheels & aero</p>
+                </div>
+                <div class="p-4 rounded-xl bg-obsidian/90 border border-slate-800">
+                  <p class="text-xs text-slate-400">Terminal Velocity</p>
+                  <p class="font-display font-bold text-2xl text-mRed">314 <span class="text-xs text-white">km/h</span></p>
+                  <p class="text-[11px] text-slate-400 mt-1">195 mph homologated</p>
+                </div>
+              </div>
+              <div class="p-3 rounded-xl bg-mRed/15 border border-mRed/30 text-xs text-slate-200">
+                <strong class="text-white">Racing Milestone:</strong> Delivered BMW Motorrad's historic <span class="text-mLightBlue font-semibold">FIM Superbike World Championship</span> titles in 2024–2025.
+              </div>
+            </div>`;
+
+        case "r1300gs":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-mLightBlue uppercase">Boxer Power Trajectory (1923–2026)</span>
+                <span class="text-xs font-bold text-mRed">+1,605% Output</span>
+              </div>
+              <!-- Boxer Horsepower Progression Chart -->
+              <div class="my-3 space-y-2.5 text-xs">
+                <div>
+                  <div class="flex justify-between mb-1"><span class="text-slate-400">1923 R 32 (494cc)</span><span class="text-white font-mono">8.5 hp</span></div>
+                  <div class="w-full h-2 bg-obsidian rounded-full"><div class="h-full bg-bmwBlue rounded-full" style="width: 6%"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1"><span class="text-slate-400">1973 R 90 S (898cc)</span><span class="text-white font-mono">67 hp</span></div>
+                  <div class="w-full h-2 bg-obsidian rounded-full"><div class="h-full bg-bmwBlue rounded-full" style="width: 46%"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1"><span class="text-slate-400">1993 R 1100 RS (Oilhead)</span><span class="text-white font-mono">90 hp</span></div>
+                  <div class="w-full h-2 bg-obsidian rounded-full"><div class="h-full bg-mLightBlue rounded-full" style="width: 62%"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1"><span class="text-slate-400">2013 R 1200 GS (Liquid-Cooled)</span><span class="text-white font-mono">125 hp</span></div>
+                  <div class="w-full h-2 bg-obsidian rounded-full"><div class="h-full bg-mLightBlue rounded-full" style="width: 86%"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1"><span class="text-white font-bold">2024–2026 R 1300 GS (ShiftCam)</span><span class="text-mRed font-bold font-mono">145 hp</span></div>
+                  <div class="w-full h-2.5 bg-obsidian rounded-full"><div class="h-full bg-gradient-to-r from-bmwBlue to-mRed rounded-full" style="width: 100%"></div></div>
+                </div>
+              </div>
+              <div class="p-3 rounded-xl bg-obsidian border border-slate-800 text-xs text-slate-300">
+                <strong class="text-mLightBlue">ASA Technology:</strong> Automated Shift Assistant operates clutch and gear actuator electro-mechanically—no clutch lever required.
+              </div>
+            </div>`;
+
+        case "k1600r18":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full gap-4">
+              <div class="p-4 rounded-xl bg-obsidian border border-bmwBlue/40">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="font-display font-bold text-white text-base">BMW K 1600 GTL</span>
+                  <span class="text-xs px-2 py-0.5 rounded bg-bmwBlue/20 text-mLightBlue font-mono">Inline-6</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-2">Ultra-compact 555 mm wide 6-cylinder engine delivering turbine smoothness for luxury grand touring.</p>
+                <div class="flex gap-4 text-xs font-mono text-white">
+                  <span>1,649 cc</span> • <span>160 hp</span> • <span>180 Nm</span>
+                </div>
+              </div>
+              <div class="p-4 rounded-xl bg-obsidian border border-mRed/40">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="font-display font-bold text-white text-base">BMW R 18 Heritage</span>
+                  <span class="text-xs px-2 py-0.5 rounded bg-mRed/20 text-mRed font-mono">Big Boxer</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-2">Largest production Boxer engine in BMW history, honoring the 1936 R 5 with exposed driveshaft.</p>
+                <div class="flex gap-4 text-xs font-mono text-white">
+                  <span>1,802 cc</span> • <span>91 hp</span> • <span>158 Nm @ 3,000 rpm</span>
+                </div>
+              </div>
+            </div>`;
+
+        case "safetyTech":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <span class="text-xs font-mono text-mLightBlue uppercase">BMW Motorrad Safety Timeline</span>
+              <div class="my-3 space-y-2.5 text-xs">
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-obsidian border border-slate-800">
+                  <span class="font-mono font-bold text-mLightBlue w-12">1988</span>
+                  <span class="text-slate-200">World's first production motorcycle ABS (K100)</span>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-obsidian border border-slate-800">
+                  <span class="font-mono font-bold text-mLightBlue w-12">1993</span>
+                  <span class="text-slate-200">Telelever anti-dive front suspension (R 1100 RS)</span>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-obsidian border border-slate-800">
+                  <span class="font-mono font-bold text-mLightBlue w-12">2014</span>
+                  <span class="text-slate-200">ABS Pro lean-angle-sensitive cornering braking</span>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-obsidian border border-slate-800">
+                  <span class="font-mono font-bold text-mRed w-12">2024+</span>
+                  <span class="text-slate-200">Radar ACC, Collision Warning & ConnectedRide HUD</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-400">Every innovation transfers aerospace telemetry into intuitive rider protection.</p>
+            </div>`;
+
+        case "electricMoto":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-emerald-400 uppercase">Zero-Emission Motorrad • 2022–2026</span>
+                <i class="fa-solid fa-bolt text-emerald-400"></i>
+              </div>
+              <div class="my-4 p-5 rounded-2xl bg-gradient-to-br from-emerald-500/15 via-bmwBlue/15 to-obsidian border border-emerald-500/30">
+                <h4 class="font-display font-bold text-xl text-white mb-1">BMW CE 04 & CE 02</h4>
+                <p class="text-xs text-slate-300 mb-4">Liquid-cooled permanent-magnet synchronous motor with automotive-grade battery modules.</p>
+                <div class="grid grid-cols-3 gap-2 text-center">
+                  <div class="p-2.5 rounded-lg bg-obsidian/80">
+                    <p class="text-[10px] text-slate-400">0–50 km/h</p>
+                    <p class="font-display font-bold text-emerald-400">2.6 sec</p>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-obsidian/80">
+                    <p class="text-[10px] text-slate-400">Top Speed</p>
+                    <p class="font-display font-bold text-white">120 km/h</p>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-obsidian/80">
+                    <p class="text-[10px] text-slate-400">Fast Charge</p>
+                    <p class="font-display font-bold text-mLightBlue">45 min</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 rounded-xl bg-obsidian border border-slate-800 text-xs text-slate-300">
+                <strong class="text-white">Vision DC Roadster:</strong> Preserves the visual center of gravity of the classic Boxer engine using longitudinal battery packs and lateral cooling elements.
+              </div>
+            </div>`;
+
+        case "carHeritage":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-mLightBlue uppercase">Four-Wheel Milestones (1928–1975)</span>
+                <i class="fa-solid fa-car-side text-bmwBlue"></i>
+              </div>
+              <div class="my-3 space-y-2.5 text-xs">
+                <div class="p-3 rounded-xl bg-obsidian border border-slate-800">
+                  <span class="text-mLightBlue font-bold">1936 BMW 328 Roadster:</span>
+                  <span class="text-slate-300"> Tubular spaceframe and hemispherical combustion chambers; won the 1940 Mille Miglia.</span>
+                </div>
+                <div class="p-3 rounded-xl bg-obsidian border border-slate-800">
+                  <span class="text-mLightBlue font-bold">1962 Neue Klasse (1500–2000):</span>
+                  <span class="text-slate-300"> MacPherson strut front suspension, semi-trailing rear arms, and the signature Hofmeister kink C-pillar.</span>
+                </div>
+                <div class="p-3 rounded-xl bg-obsidian border border-mRed/40">
+                  <span class="text-mRed font-bold">1973 BMW 2002 Turbo:</span>
+                  <span class="text-slate-300"> Europe's first turbocharged production car (170 hp, 211 km/h) with mirror-written front spoiler script.</span>
+                </div>
+              </div>
+            </div>`;
+
+        case "mDivision":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-mRed uppercase">BMW Motorsport GmbH • Est. 1972</span>
+                <div class="flex h-3 w-12 rounded overflow-hidden">
+                  <div class="flex-1 bg-mLightBlue"></div>
+                  <div class="flex-1 bg-bmwBlue"></div>
+                  <div class="flex-1 bg-mRed"></div>
+                </div>
+              </div>
+              <div class="my-3 space-y-3">
+                <div class="p-4 rounded-xl bg-obsidian border border-slate-800">
+                  <h4 class="font-display font-bold text-white text-sm">1978 BMW M1 (E26)</h4>
+                  <p class="text-xs text-slate-400 mt-1">Mid-engine homologation supercar; 3.5L 24-valve M88 inline-six (277 hp, 265 km/h).</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gradient-to-r from-bmwBlue/15 to-mRed/15 border border-mRed/30">
+                  <h4 class="font-display font-bold text-white text-sm">1986 BMW E30 M3</h4>
+                  <p class="text-xs text-slate-300 mt-1">2.3L–2.5L S14 16-valve engine, DTM & WTCC champion—widely hailed as the purest driver's car ever built.</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-400">BMW M colors: Light Blue (BMW), Red (Motorsport), and Dark Blue (the synergy between them).</p>
+            </div>`;
+
+        case "m5xDrive":
+          return `
+            <div class="rounded-2xl bg-carbon border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <span class="text-xs font-mono text-mLightBlue uppercase">Dynamics & Utility Architecture</span>
+              <div class="my-3 grid grid-cols-2 gap-3">
+                <div class="p-4 rounded-xl bg-obsidian border border-slate-800">
+                  <p class="text-xs text-slate-400">Axle Load Balance</p>
+                  <p class="font-display font-bold text-2xl text-mLightBlue">50 : 50</p>
+                  <p class="text-[11px] text-slate-400 mt-1">Neutral cornering dynamics</p>
+                </div>
+                <div class="p-4 rounded-xl bg-obsidian border border-slate-800">
+                  <p class="text-xs text-slate-400">1999 X5 Segment</p>
+                  <p class="font-display font-bold text-2xl text-white">SAV</p>
+                  <p class="text-[11px] text-slate-400 mt-1">Sports Activity Vehicle</p>
+                </div>
+              </div>
+              <div class="p-4 rounded-xl bg-obsidian border border-slate-800 text-xs space-y-1.5">
+                <div class="flex justify-between"><span class="text-slate-400">1984 E28 M5:</span><span class="text-white font-semibold">286 hp Hand-Built Inline-6</span></div>
+                <div class="flex justify-between"><span class="text-slate-400">2005 E60 M5:</span><span class="text-white font-semibold">507 hp F1-Inspired 5.0L V10</span></div>
+                <div class="flex justify-between"><span class="text-slate-400">2025–26 G90 M5:</span><span class="text-mRed font-semibold">727 hp V8 M Hybrid + xDrive</span></div>
+              </div>
+            </div>`;
+
+        case "neueKlasse":
+          return `
+            <div class="rounded-2xl bg-gradient-to-br from-carbon via-slate-900 to-obsidian border border-mLightBlue/40 p-6 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-mLightBlue uppercase">Neue Klasse 2025–2026</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-mLightBlue/20 text-mLightBlue font-mono">800V Gen6</span>
+              </div>
+              <div class="my-4 grid grid-cols-3 gap-2.5 text-center">
+                <div class="p-3.5 rounded-xl bg-obsidian/90 border border-slate-800">
+                  <p class="font-display font-bold text-2xl text-mLightBlue">+30%</p>
+                  <p class="text-[11px] text-slate-400 mt-1">Charging Speed</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-obsidian/90 border border-slate-800">
+                  <p class="font-display font-bold text-2xl text-white">+30%</p>
+                  <p class="text-[11px] text-slate-400 mt-1">Driving Range</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-obsidian/90 border border-slate-800">
+                  <p class="font-display font-bold text-2xl text-emerald-400">-50%</p>
+                  <p class="text-[11px] text-slate-400 mt-1">Cell CO₂ Footprint</p>
+                </div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-obsidian/90 border border-slate-800 text-xs text-slate-300">
+                <strong class="text-white">Heart of Joy ECU:</strong> BMW's in-house powertrain and chassis control unit processes driving dynamics 10x faster than prior systems.
+              </div>
+            </div>`;
+
+        case "metrics":
+        default:
+          return `
+            <div class="rounded-2xl bg-gradient-to-br from-carbon via-slate-900 to-obsidian border border-slate-800 p-6 flex flex-col justify-between h-full">
+              <span class="text-xs font-mono text-mLightBlue uppercase">BMW Group Global Scale (2026)</span>
+              <div class="my-4 space-y-3">
+                <div class="p-4 rounded-xl bg-obsidian border border-bmwBlue/40 flex items-center justify-between">
+                  <div>
+                    <p class="text-xs text-slate-400">BMW Motorrad Deliveries</p>
+                    <p class="font-display font-extrabold text-3xl text-mLightBlue">210,000+</p>
+                  </div>
+                  <i class="fa-solid fa-motorcycle text-3xl text-bmwBlue/60"></i>
+                </div>
+                <div class="p-4 rounded-xl bg-obsidian border border-mRed/40 flex items-center justify-between">
+                  <div>
+                    <p class="text-xs text-slate-400">BMW Group Automobiles</p>
+                    <p class="font-display font-extrabold text-3xl text-white">2.5M+</p>
+                  </div>
+                  <i class="fa-solid fa-car text-3xl text-mRed/60"></i>
+                </div>
+                <div class="p-4 rounded-xl bg-obsidian border border-slate-800 flex items-center justify-between">
+                  <div>
+                    <p class="text-xs text-slate-400">Continuous Heritage</p>
+                    <p class="font-display font-extrabold text-3xl text-mRed">110 Years</p>
+                  </div>
+                  <i class="fa-solid fa-award text-3xl text-slate-600"></i>
+                </div>
+              </div>
+              <p class="text-xs text-center text-slate-400 italic">"Make Life a Ride" & "Sheer Driving Pleasure"</p>
+            </div>`;
+      }
+    }
+
+    // State Management
+    let currentIndex = 0;
+    let notesVisible = false;
+
+    const slideWrapper = document.getElementById("slide-wrapper");
+    const progressBar = document.getElementById("progress-bar");
+    const slideCurrentEl = document.getElementById("slide-current");
+    const slideTotalEl = document.getElementById("slide-total");
+    const slideCategoryEl = document.getElementById("slide-category-label");
+    const btnPrev = document.getElementById("btn-prev");
+    const btnNext = document.getElementById("btn-next");
+    const notesPanel = document.getElementById("speaker-notes-panel");
+    const notesText = document.getElementById("speaker-notes-text");
+
+    slideTotalEl.textContent = slidesData.length;
+
+    function renderSlide(index) {
+      const slide = slidesData[index];
+      slideCurrentEl.textContent = slide.id;
+      slideCategoryEl.textContent = slide.era;
+      progressBar.style.width = `${((index + 1) / slidesData.length) * 100}%`;
+
+      btnPrev.disabled = index === 0;
+      btnNext.disabled = index === slidesData.length - 1;
+      notesText.textContent = slide.notes;
+
+      const pointsHtml = slide.points.map(p => `
+        <li class="flex items-start gap-3">
+          <span class="mt-1.5 w-2 h-2 rounded-full bg-mLightBlue shrink-0"></span>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            <strong class="text-white font-semibold">${p.label}:</strong> ${p.text}
+          </p>
+        </li>
+      `).join("");
+
+      const specsHtml = slide.specs.map(s => `
+        <div class="px-3.5 py-2.5 rounded-xl bg-obsidian/90 border border-slate-800">
+          <span class="block text-[11px] uppercase tracking-wider text-slate-400">${s.k}</span>
+          <span class="font-display font-semibold text-xs sm:text-sm text-white">${s.v}</span>
+        </div>
+      `).join("");
+
+      const photo = slidePhotoMap[slide.id];
+      const photoHtml = photo ? `
+        <figure class="mb-5 overflow-hidden rounded-2xl border border-slate-700 bg-obsidian shadow-xl">
+          <img src="${commonsPhoto(photo.file)}" alt="${photo.caption}" loading="lazy" class="slide-photo" onerror="this.closest('figure').classList.add('hidden')">
+          <figcaption class="px-3 py-2 text-xs text-slate-300 flex items-center justify-between gap-2">
+            <span>${photo.caption}</span><a class="text-mLightBlue hover:underline" href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=${encodeURIComponent(photo.caption)}" target="_blank" rel="noopener">Image source</a>
+          </figcaption>
+        </figure>` : "";
+      const closingGalleryHtml = slide.id === 17 ? `
+        <section class="mt-8 border-t border-slate-700 pt-6">
+          <h2 class="font-display text-xl font-bold text-white mb-4">Iconic BMW Motorcycles & Cars</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            ${[
+              ["1923 BMW R 32", "1923 BMW R32 (1) - The Art of the Motorcycle - Memphis.jpg"],
+              ["BMW M 1000 RR", "2022-05 BMW M Motorrad S1000RR.jpg"],
+              ["BMW R 1300 GS", "BMW R1300GS Adventure 2025.jpg"],
+              ["BMW CE 04", "BMW CE04 Avantgarde.png"],
+              ["BMW 2002 Turbo", "1974 BMW 2002 Turbo.jpg"],
+              ["BMW M1", "BMW M1 071 (3418979140).jpg"],
+              ["BMW M5", "BMW M5 295 (3420870402).jpg"],
+              ["BMW M4 CSL", "2022-05-22 M4-CSL and M1000RR.jpg"]
+            ].map(([name, file]) => `<figure class="overflow-hidden rounded-xl border border-slate-700 bg-obsidian"><img src="${commonsPhoto(file)}" alt="${name}" loading="lazy" class="gallery-photo" onerror="this.closest('figure').classList.add('hidden')"><figcaption class="px-2 py-2 text-xs text-slate-200">${name}</figcaption></figure>`).join("")}
+          </div>
+          <p class="mt-3 text-[10px] text-slate-500">Photographs: Wikimedia Commons. Open each image's source page for creator and license details.</p>
+        </section>` : "";
+
+      slideWrapper.innerHTML = `
+        <article class="slide-enter rounded-3xl bg-carbon/60 border border-slate-800/90 p-6 sm:p-10 shadow-2xl">
+          <!-- Top Meta Header -->
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+            <span class="font-display text-xs sm:text-sm font-bold uppercase tracking-widest text-mLightBlue">${slide.era}</span>
+            <span class="text-xs font-mono px-3 py-1 rounded-full bg-obsidian border border-slate-700 text-slate-300">${slide.badge}</span>
+          </div>
+
+          <!-- Title & Subtitle -->
+          <h1 class="font-display font-bold text-2xl sm:text-4xl lg:text-[40px] text-white leading-tight mb-2">
+            ${slide.title}
+          </h1>
+          <p class="text-sm sm:text-lg text-slate-400 mb-6 sm:mb-8">
+            ${slide.subtitle}
+          </p>
+
+          <!-- Side-by-Side Content + Visual Grid -->
+          <div class="slide-content-grid grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+            <!-- Left Side: Academic Lecture Points & Key Specs -->
+            <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+              <ul class="space-y-3.5">
+                ${pointsHtml}
+              </ul>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
+                ${specsHtml}
+              </div>
+            </div>
+
+            <!-- Right Side: Architectural Vector & Technical Card -->
+            <div class="lg:col-span-5">
+              ${photoHtml}
+              ${renderSlideVisual(slide.visualType)}
+            </div>
+          </div>
+          ${closingGalleryHtml}
+        </article>
+      `;
+
+      // Update active state in TOC
+      document.querySelectorAll(".toc-item").forEach((el, idx) => {
+        if (idx === index) {
+          el.classList.add("bg-bmwBlue/20", "border-bmwBlue", "text-white");
+          el.classList.remove("border-transparent", "text-slate-400");
+        } else {
+          el.classList.remove("bg-bmwBlue/20", "border-bmwBlue", "text-white");
+          el.classList.add("border-transparent", "text-slate-400");
+        }
+      });
+
+      // Update URL hash for bookmarking specific slides
+      window.history.replaceState(null, "", `#slide-${slide.id}`);
+    }
+
+    // Build Table of Contents & Grid Overview
+    function buildNavigationMenus() {
+      const tocList = document.getElementById("toc-list");
+      const gridContainer = document.getElementById("grid-container");
+
+      tocList.innerHTML = slidesData.map((s, idx) => `
+        <button onclick="goToSlide(${idx}); closeToc();" class="toc-item w-full text-left p-3 rounded-xl border border-transparent hover:bg-steel/60 transition flex items-start gap-3">
+          <span class="font-mono text-xs font-bold text-mLightBlue mt-0.5">${String(s.id).padStart(2, '0')}</span>
+          <div>
+            <p class="text-xs text-slate-400">${s.era}</p>
+            <p class="text-sm font-medium text-slate-200 line-clamp-1">${s.title}</p>
+          </div>
+        </button>
+      `).join("");
+
+      gridContainer.innerHTML = slidesData.map((s, idx) => `
+        <button onclick="goToSlide(${idx}); closeGrid();" class="text-left p-5 rounded-2xl bg-carbon hover:bg-steel/70 border border-slate-800 hover:border-mLightBlue transition flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-mono font-bold text-mLightBlue">SLIDE ${String(s.id).padStart(2, '0')}</span>
+              <span class="text-[11px] text-slate-400">${s.badge}</span>
+            </div>
+            <h3 class="font-display font-bold text-base text-white group-hover:text-mLightBlue transition line-clamp-2 mb-2">${s.title}</h3>
+            <p class="text-xs text-slate-400 line-clamp-2">${s.subtitle}</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] font-medium text-slate-300 flex items-center justify-between">
+            <span>${s.era}</span>
+            <i class="fa-solid fa-arrow-right text-mLightBlue opacity-0 group-hover:opacity-100 transition"></i>
+          </div>
+        </button>
+      `).join("");
+    }
+
+    function goToSlide(index) {
+      if (!advancingFromSpeech && "speechSynthesis" in window && window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        updateSpeechButtons(false);
+      }
+      if (index >= 0 && index < slidesData.length) {
+        currentIndex = index;
+        renderSlide(currentIndex);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    // English text-to-speech narration for the actual visible slide content
+    const speechStatus = document.getElementById("speech-status");
+    const btnSpeakCurrent = document.getElementById("btn-speak-current");
+    const btnSpeakAll = document.getElementById("btn-speak-all");
+    const btnSpeakCurrentNotes = document.getElementById("btn-speak-current-notes");
+    const btnSpeakAllNotes = document.getElementById("btn-speak-all-notes");
+    const btnSpeakPause = document.getElementById("btn-speak-pause");
+    const btnSpeakStop = document.getElementById("btn-speak-stop");
+    let playAllSlides = false;
+    let speechMode = "slide";
+    let advancingFromSpeech = false;
+
+    function updateSpeechButtons(isActive) {
+      btnSpeakPause.disabled = !isActive;
+      btnSpeakStop.disabled = !isActive;
+    }
+
+    function stopNarration(showMessage = true) {
+      playAllSlides = false;
+      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+      updateSpeechButtons(false);
+      btnSpeakPause.textContent = "Pause";
+      if (showMessage) speechStatus.textContent = "Narration stopped.";
+    }
+
+    function speakCurrentSlide(mode = "slide") {
+      speechMode = mode;
+      if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+        speechStatus.textContent = "This browser does not support text-to-speech. Please open the file in Chrome.";
+        return;
+      }
+      // Choose either the visible slide text or the separate presenter script.
+      const activeSlide = slideWrapper.querySelector("article");
+      const textToRead = mode === "notes"
+        ? (slidesData[currentIndex].notes || "").replace(/\s+/g, " ").trim()
+        : (activeSlide ? activeSlide.innerText.replace(/\s+/g, " ").trim() : "");
+      if (!textToRead) {
+        speechStatus.textContent = mode === "notes" ? "There are no speaker notes for this slide." : "There is no readable text on this slide.";
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(textToRead);
+      utterance.lang = "en-US";
+      utterance.rate = 0.76;
+      utterance.pitch = 1;
+      const voices = window.speechSynthesis.getVoices();
+      const englishVoice = voices.find(v => /^en-US/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang));
+      if (englishVoice) utterance.voice = englishVoice;
+      utterance.onstart = () => {
+        updateSpeechButtons(true);
+        speechStatus.textContent = `${mode === "notes" ? "Reading speaker notes" : "Reading slide text"} — slide ${slidesData[currentIndex].id} of ${slidesData.length}…`;
+      };
+      utterance.onend = () => {
+        updateSpeechButtons(false);
+        if (playAllSlides && currentIndex < slidesData.length - 1) {
+          advancingFromSpeech = true;
+          goToSlide(currentIndex + 1);
+          advancingFromSpeech = false;
+          window.setTimeout(() => speakCurrentSlide(speechMode), 450);
+        } else {
+          playAllSlides = false;
+          speechStatus.textContent = currentIndex === slidesData.length - 1
+            ? "Lecture narration finished."
+            : "Slide narration finished.";
+        }
+      };
+      utterance.onerror = (event) => {
+        updateSpeechButtons(false);
+        if (event.error !== "canceled" && event.error !== "interrupted") {
+          speechStatus.textContent = "Audio could not start. Try opening this file in Chrome and tapping Play again.";
+        }
+      };
+      window.speechSynthesis.speak(utterance);
+    }
+
+    btnSpeakCurrent.addEventListener("click", () => {
+      playAllSlides = false;
+      speakCurrentSlide("slide");
+    });
+    btnSpeakAll.addEventListener("click", () => {
+      playAllSlides = true;
+      speakCurrentSlide("slide");
+    });
+    btnSpeakCurrentNotes.addEventListener("click", () => {
+      playAllSlides = false;
+      speakCurrentSlide("notes");
+    });
+    btnSpeakAllNotes.addEventListener("click", () => {
+      playAllSlides = true;
+      speakCurrentSlide("notes");
+    });
+    btnSpeakPause.addEventListener("click", () => {
+      if (!window.speechSynthesis) return;
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        btnSpeakPause.textContent = "Pause";
+        speechStatus.textContent = "Narration resumed.";
+      } else if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.pause();
+        btnSpeakPause.textContent = "Resume";
+        speechStatus.textContent = "Narration paused.";
+      }
+    });
+    btnSpeakStop.addEventListener("click", () => stopNarration());
+
+    // Event Listeners
+    btnPrev.addEventListener("click", () => goToSlide(currentIndex - 1));
+    btnNext.addEventListener("click", () => goToSlide(currentIndex + 1));
+
+    // Speaker Notes Toggle
+    document.getElementById("btn-notes").addEventListener("click", () => {
+      notesVisible = !notesVisible;
+      notesPanel.classList.toggle("hidden", !notesVisible);
+    });
+
+    // Copy Speaker Notes via execCommand fallback
+    document.getElementById("btn-copy-notes").addEventListener("click", () => {
+      const textarea = document.createElement("textarea");
+      textarea.value = slidesData[currentIndex].notes;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+
+      const toast = document.getElementById("toast");
+      toast.classList.remove("hidden");
+      setTimeout(() => toast.classList.add("hidden"), 2000);
+    });
+
+    // TOC Drawer Controls
+    const tocDrawer = document.getElementById("toc-drawer");
+    function closeToc() { tocDrawer.classList.add("hidden"); }
+    document.getElementById("btn-toc").addEventListener("click", () => tocDrawer.classList.remove("hidden"));
+    document.getElementById("btn-close-toc").addEventListener("click", closeToc);
+    document.getElementById("toc-backdrop").addEventListener("click", closeToc);
+
+    // Grid Modal Controls
+    const gridModal = document.getElementById("grid-modal");
+    function closeGrid() { gridModal.classList.add("hidden"); }
+    document.getElementById("btn-grid").addEventListener("click", () => gridModal.classList.remove("hidden"));
+    document.getElementById("btn-close-grid").addEventListener("click", closeGrid);
+
+    // Fullscreen Toggle
+    document.getElementById("btn-fullscreen").addEventListener("click", () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    });
+
+    // Keyboard Navigation
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === "PageDown") goToSlide(currentIndex + 1);
+      if (e.key === "ArrowLeft" || e.key === "PageUp") goToSlide(currentIndex - 1);
+      if (e.key.toLowerCase() === "n") {
+        notesVisible = !notesVisible;
+        notesPanel.classList.toggle("hidden", !notesVisible);
+      }
+      if (e.key.toLowerCase() === "g") gridModal.classList.toggle("hidden");
+      if (e.key === "Escape") {
+        closeToc();
+        closeGrid();
+      }
+    });
+
+    // Slide changes are manual only (buttons, keyboard, or TOC).
+    // Vertical scrolling and touch gestures never change slides.
+
+    // Initialize Application
+    buildNavigationMenus();
+    const hashMatch = window.location.hash.match(/^#slide-(\d+)$/);
+    if (hashMatch) {
+      const targetIdx = parseInt(hashMatch[1], 10) - 1;
+      if (targetIdx >= 0 && targetIdx < slidesData.length) currentIndex = targetIdx;
+    }
+    renderSlide(currentIndex);
+  </script>
+</body>
+</html>
